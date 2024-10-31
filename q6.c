@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Function to determine the number of matchsticks A should pick
+
 int matchsticks(int n) {
     if (n % 5 == 0) {
         return -1; 
@@ -12,14 +12,14 @@ int matchsticks(int n) {
 int main() {
     int n,result;
 
-    // taking the no of matchstickes on the table
+    
     printf("Enter the number of matchsticks on the table: ");
     scanf("%d", &n);
 
-    // Determining the result
+    
     result= matchsticks(n);
 
-    // Displaying the result
+   
     if (result == -1) {
         printf("it is impossible for A to win the game");
     } else {
