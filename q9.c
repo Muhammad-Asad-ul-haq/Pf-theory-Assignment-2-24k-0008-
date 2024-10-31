@@ -38,16 +38,16 @@ int main() {
         printf("Enter your move: ");
         scanf(" %c", &move);
 
-        // Check for quit condition
+        
         if (move == 'E' || move == 'e') {
             printf("Thanks for playing! \nFinal score: %d\n", score);
             break;
         }
 
-        // Move the player
+        
         moves(grid, move, &playersRow, &playerCol, &score, Items);
 
-        // Checking if the player has collected all items present in the grid
+        
         if (score == Items) {
             printf("\n");
             printf("\n");
@@ -59,7 +59,7 @@ int main() {
     return 0;
 }
 
-// Function to display the current grid
+
 void displayingGrid(char grid[5][5]) {
     int i,j;
 	for (i = 0; i < 5; i++) {
@@ -71,11 +71,11 @@ void displayingGrid(char grid[5][5]) {
     printf("\n");
 }
 
-// Function to move the player
+
 void moves(char grid[5][5], char direction, int *playersRow, int *playerColumn, int *score, int Items) {
     int newRow = *playersRow;
     int newColumn = *playerColumn;
-    // Using switch case to determine the direction the player want to move
+    
 	switch (direction) {
     case 'W':
     case 'w':
@@ -103,7 +103,7 @@ void moves(char grid[5][5], char direction, int *playersRow, int *playerColumn, 
 }
 
 
-    // Checking if the new position is within the grid
+  
     if (newRow < 0 || newRow >= 5 || newColumn < 0 || newColumn >= 5) {
         printf("\n");
         printf("\n");
@@ -113,7 +113,7 @@ void moves(char grid[5][5], char direction, int *playersRow, int *playerColumn, 
 		return;
     }
 
-    // Check if the new position is an obstacle
+    
     if (grid[newRow][newColumn] == 'X') {
         printf("\n");
         printf("\n");
@@ -123,16 +123,16 @@ void moves(char grid[5][5], char direction, int *playersRow, int *playerColumn, 
 		return;
     }
 
-    // Check if the new position has an item
+   
     if (grid[newRow][newColumn] == 'I') {
         (*score)++;
         printf("Item collected! Score: %d\n",*score);
     }
 
-    // Updating the grid
+    
     grid[*playersRow][*playerColumn] = ' ';
 
-    // Moving the player to the new position
+    
     grid[newRow][newColumn]='P';
     *playersRow=newRow;
     *playerColumn=newColumn;
