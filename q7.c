@@ -4,20 +4,20 @@
 
 void generateArray(char arr[6][5], int idDigits[4]) {
     int i = 0, j = 0;
-    // Filling with random letter
+   
     for (i = 0; i < 6 - 1; i++) {
         for (j = 0; j < 5; j++) {
             arr[i][j] = 'A' + (rand() % 26);
         }
     }
-    // Placing my student ID's last four digits in the last row
+    
     for (j = 0; j < 4; j++) {
         arr[6 - 1][j] = '0' + idDigits[j];
     }
     arr[6 - 1][4]='A';
 }
 
-// Displaying the 2D array
+
 void printArray(char arr[6][5]){
     int i = 0, j = 0;
     for (i = 0; i < 6; i++) {
@@ -28,7 +28,7 @@ void printArray(char arr[6][5]){
     }
 }
 
-// Comparing the string with the letter in the grid
+
 int searchString(char arr[6][5], char *str) {
     int strLen = strlen(str);
     int i = 0, j = 0, k = 0;
@@ -62,7 +62,7 @@ int main() {
         printf("Enter search string (or 'END' to stop): ");
         scanf("%s", input);
 
-        // Convert input to uppercase
+        
         int i = 0;
         while (input[i]) {
             input[i] = toupper(input[i]);
